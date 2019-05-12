@@ -1,0 +1,1 @@
+http://boshigure96.php.xdomain.jp/Map/Android_Connector.php?action=getdata&table_name=coordinate
