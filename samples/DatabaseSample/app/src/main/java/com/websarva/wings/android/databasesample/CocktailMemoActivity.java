@@ -70,10 +70,11 @@ public class CocktailMemoActivity extends AppCompatActivity {
 
 		//データベースヘルパーオブジェクトを作成。
 		DatabaseHelper helper = new DatabaseHelper(CocktailMemoActivity.this);
-		//データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得。
-		SQLiteDatabase db = helper.getWritableDatabase();
 
+		//データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得。
+		SQLiteDatabase db = helper.CheakDataBase();
 		try {
+
 			//まず、リストで選択されたカクテルのメモデータを削除。その後インサートを行う。
 			//削除用SQL文字列を用意。
 			String sqlDelete = "DELETE FROM cocktailmemo WHERE _id = ?";

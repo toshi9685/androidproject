@@ -2,7 +2,13 @@ package com.websarva.wings.android.databasesample;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.io.IOException;
+
+import static android.database.sqlite.SQLiteDatabase.OPEN_READWRITE;
 
 /**
  * 『Androidアプリ開発の教科書』
@@ -49,4 +55,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 	}
+
+	public SQLiteDatabase CheakDataBase(){
+		String path = "testdatabase";
+		SQLiteDatabase checkDb = null;
+		try {
+			checkDb = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READWRITE);
+		} catch (SQLiteException e) {
+			Log.i("test", e.getMessage());
+		}
+		return checkDb;
+	}
+
 }
