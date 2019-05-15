@@ -16,7 +16,7 @@ import static android.database.sqlite.SQLiteDatabase.OPEN_READWRITE;
  * データベースサンプル
  *
  * データベースヘルパークラス。
- *
+ * https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase
  * @author Shinzo SAITO
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
